@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+<html lang="en">
+<head>
+    <title>Book Flat</title>
+</head>
+<body>
+    {% block 'main'%}
+    <h2 class="mt-5">Book Flat</h2>
+    <hr style="height: 2px">
+    <div class="col-md-8 mt-3 m-auto">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" name="city" value="{{flat.City}}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                    <label for="residencyname" class="form-label">Residency Name</label>
+                    <input type="text" class="form-control" name="residencyname" value="{{flat.ResidencyName}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="flatno" class="form-label">Flat Nomber</label>
+                        <input type="text" class="form-control" name="flatno" value="{{flat.FlatNomber}}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="flowrno" class="form-label">Flowr Nomber</label>
+                        <input type="text" class="form-control" name="flowrno" value="{{flat.FlowrNomber}}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="form-control" name="date" value="{{flat.Date}}">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </form>
+        {% endblock 'main'%}
+    </body>
+</html>

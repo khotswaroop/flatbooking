@@ -1,0 +1,16 @@
+{% include 'loginheader.html' %}
+{% block 'main' %}
+    <form action="/login" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                {{form}}
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Login">
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

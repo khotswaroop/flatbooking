@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register|User</title>
+</head>
+<body>
+    {% block 'main'%}
+    <h2 class="mt-5">Registration</h2>
+    <hr style="height: 2px">
+    <form method="POST" mt-5>
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" id="fid" name="fname">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lid" name="lname">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="form-label">Address</label>
+                <input type="text" class="form-control" id="addid" name="add">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">User Name</label>
+                <input type="text" class="form-control" id="uid" name="uname">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Enter Password</label>
+                <input type="text" class="form-control" id="pid" name="passrd">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Date</label>
+                <input type="date" class="form-control" id="did" name="detid">
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-3">
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+    {% endblock 'main'%}
+</body>
+</html>
