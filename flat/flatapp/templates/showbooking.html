@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% block 'main'%}
+<h2 class="mt-5">Show Booking</h2>
+<a href="/bookflat"><button class="btn btn-secondary" style="margin-left: 91%;
+    margin-top: -42px;">Book Flat</button></a>
+<hr style="height: 2px">
+    <div class="row">
+        <div class="col-md-2">
+            <h4 class="mt-2">Filter</h4>
+            <a href="/showbooking"><button class="btn btn-warning">All Location</button></a>
+            <hr>
+            <!-- <a href="/location"><button class="btn btn-warning">Location</button></a> -->
+            <a href="/mumbai"><button class="btn btn-info">Mumbai</button><h2 class="mt-2"></h2></a>
+            <a href="/bangalore"><button class="btn btn-info">Bangalore</button><h2 class="mt-2"></h2></a>
+            <a href="/pune"><button class="btn btn-info">Pune</button></a>
+            <a href="/delhi"><button class="btn btn-info">Delhi</button></a>
+            <!-- <hr>
+            <a href="/residency"><button class="btn btn-success">Residency</button></a>
+            <hr>
+            <a href="/location"><button class="btn btn-warning">Location</button></a> -->
+        </div>
+        <div class="col-md-10">
+            <table class="table" border="1px">
+                <tr>
+                    <th>City</th>
+                    <th>Reesidency Name</th>
+                    <th>Flat Nomber</th>
+                    <th>Flowr Nomber</th>
+                    <th>Date</th>
+                </tr>
+                {% for flat in data %}
+                    <tr>
+                        <td>{{flat.City}}</td>
+                        <td>{{flat.ResidencyName}}</td>
+                        <td>{{flat.FlatNomber}}</td>
+                        <td>{{flat.FlowrNomber}}</td>
+                        <td>{{flat.Date}}</td>
+                        <td><a href="/edit/{{flat.id}}"><button class="btn btn-warning">Edit</button></a></td>
+                        <td><a href="/delete/{{flat.id}}"><button class="btn btn-danger">Delete</button></a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    {% endblock 'main'%}

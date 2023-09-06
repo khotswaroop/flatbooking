@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block 'main'%}
+<h2 class="mt-5">Show Booking</h2>
+<hr style="height: 2px">
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <table class="table" border="1px">
+                <tr>
+                    <th>City</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                </tr>
+                {% for flat in data %}
+                    <tr>
+                        <td>{{flat.City}}</td>
+                        <td>{{flat.ResidencyName}}</td>
+                        <td>{{flat.FlatNomber}}</td>
+                        <td>{{flat.FlowrNomber}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+    {% endblock 'main'%}

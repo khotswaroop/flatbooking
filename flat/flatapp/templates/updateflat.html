@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+<html lang="en">
+<head>
+    <title>Update Flat</title>
+</head>
+<body>
+    {% block 'main'%}
+    <h2 class="mt-5">Update Flat</h2>
+    <hr style="height: 2px">
+    <div class="col-md-8 mt-3 m-auto">
+        {% for flat in data %}
+        <form action="/edit/{{flat.id}}" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" name="city" id="{{flat.City}}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                    <label for="residencyname" class="form-label">Residency Name</label>
+                    <input type="text" class="form-control" name="residencyname" id="{{flat.ResidencyName}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="flatno" class="form-label">Flat Nomber</label>
+                        <input type="text" class="form-control" name="flatno" id="{{flat.FlatNomber}}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="flowrno" class="form-label">Flowr Nomber</label>
+                        <input type="text" class="form-control" name="flowrno" id="{{flat.FlowrNomber}}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="form-control" name="date" id="{{flat.Date}}">
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </form>
+    {% endblock 'main'%}
+    </body>
+</html>

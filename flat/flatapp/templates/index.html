@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{% load static%}
+    {% block 'main'%}
+        <div class="container">
+          <div class="row">
+          </div>
+            <div class="row">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                      <div class="card">
+                        <img src="{% static 'images/residency1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Mumbai</h5>
+                          <a href="/bookflat"><button class="btn btn-info">Book Now</button></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <img src="{% static 'images/residency2.webp' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Bangalore</h5>
+                          <a href="/bookflat"><button class="btn btn-info">Book Now</button></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <img src="{% static 'images/residency3.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Pune</h5>
+                          <a href="/bookflat"><button class="btn btn-info">Book Now</button></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <img src="{% static 'images/residency4.webp' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Delhi</h5>
+                          <a href="/bookflat"><button class="btn btn-info">Book Now</button></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    {% endblock %}
